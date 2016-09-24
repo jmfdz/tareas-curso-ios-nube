@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lmX-Us-Lp5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Librería-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="libreria" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduzca el ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-Lp-nao">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jb3-Ny-0gr">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="978-84-376-0494-7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-Iy-uEI">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4GT-Iy-uEI" firstAttribute="top" secondItem="NvZ-Lp-nao" secondAttribute="bottom" constant="28" id="6L7-P5-PSJ"/>
+                            <constraint firstItem="jb3-Ny-0gr" firstAttribute="top" secondItem="4GT-Iy-uEI" secondAttribute="bottom" constant="31" id="ESW-Ce-5jD"/>
+                            <constraint firstItem="jb3-Ny-0gr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H9M-QL-Uvf"/>
+                            <constraint firstItem="4GT-Iy-uEI" firstAttribute="centerX" secondItem="jb3-Ny-0gr" secondAttribute="centerX" constant="-9" id="KH7-xD-fwf"/>
+                            <constraint firstItem="NvZ-Lp-nao" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="Q6e-OR-P2X"/>
+                            <constraint firstItem="jb3-Ny-0gr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="SuH-el-ip0"/>
+                            <constraint firstItem="4GT-Iy-uEI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-9" id="fwi-LL-Hz2"/>
+                            <constraint firstItem="NvZ-Lp-nao" firstAttribute="leading" secondItem="4GT-Iy-uEI" secondAttribute="leading" constant="28" id="lmE-ki-zp9"/>
+                            <constraint firstItem="NvZ-Lp-nao" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pMz-IW-Uov"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Librería" id="edu-pK-WiS">
+                        <barButtonItem key="rightBarButtonItem" title="Limpiar datos" id="8hr-4W-uhe">
+                            <connections>
+                                <action selector="limpiarDatos:" destination="BYZ-38-t0r" id="hwG-pF-Jes"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contenido" destination="jb3-Ny-0gr" id="vKo-cg-9M7"/>
+                        <outlet property="isbn" destination="4GT-Iy-uEI" id="Yal-tv-Dfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W2j-4g-KlM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lmX-Us-Lp5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oeu-0r-3mL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="anw-Ty-Z4X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b9-wO-cqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
