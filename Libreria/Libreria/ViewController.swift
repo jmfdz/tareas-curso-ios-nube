@@ -44,9 +44,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let session = URLSession.shared
         let bloque = { (datos: Data?, respuesta: URLResponse?, error: Error?) -> Void in
-            let valor = String(data:datos!,encoding: .utf8)!
             DispatchQueue.main.sync() {
-                self.contenido.text = valor
+                if let _ = error {
+                    self.contenido.text = "Ha ocurrido un error con la conexión y no se han podido obtener los datos."
+                } else {
+                    let valor = String(data:datos!,encoding: .utf8)!                    
+                    self.contenido.text = valor
+                }
             }
         }
         
